@@ -7,6 +7,7 @@
 //
 
 #import "GIPMainViewController.h"
+#import "GIPCybertruck.h"
 
 @interface GIPMainViewController ()
 
@@ -17,15 +18,24 @@
 
 @implementation GIPMainViewController
 
-
+- (GIPCybertruck *)cybertruck {
+    if (!_cybertruck) {
+        _cybertruck = [[GIPCybertruck alloc] initWithRange:297.0f
+                                                   battery:59.4f
+                                               temperature:78.0f
+                                                    isACOn:YES
+                                                  fanSpeed:3];
+    }
+    return _cybertruck;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor blackColor]];
-    
-        
-    // Gradient Background
+}
+
+- (void)makeGradientBackground {
     self.gradient = [CAGradientLayer layer];
     UIColor *topColor = [UIColor colorWithRed:66.0f/255.0 green:71.0f/255.0 blue:80.0f/255.0 alpha:0.8f];
     UIColor *bottomColor = [UIColor colorWithRed:32.0f/255.0 green:35.0f/255.0 blue:38.0f/255.0 alpha:0.8f];
@@ -33,6 +43,7 @@
     self.gradient.frame = self.view.bounds;
     [self.view.layer insertSublayer:self.gradient atIndex:0];
 }
+
 
 // Handle screen rotation
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {

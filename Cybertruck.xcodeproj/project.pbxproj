@@ -14,6 +14,7 @@
 		A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */; };
 		A6EA2FF12465F77C00280C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FF02465F77C00280C9B /* main.m */; };
 		A6EA2FFC2466234800280C9B /* GIPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FFB2466234800280C9B /* GIPMainViewController.m */; };
+		A6EA300124664F1900280C9B /* GIPCybertruck.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA300024664F1900280C9B /* GIPCybertruck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		A6EA2FF02465F77C00280C9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6EA2FFA2466234800280C9B /* GIPMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMainViewController.h; sourceTree = "<group>"; };
 		A6EA2FFB2466234800280C9B /* GIPMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMainViewController.m; sourceTree = "<group>"; };
+		A6EA2FFF24664F1900280C9B /* GIPCybertruck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPCybertruck.h; sourceTree = "<group>"; };
+		A6EA300024664F1900280C9B /* GIPCybertruck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPCybertruck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		A6EA2FDD2465F77900280C9B /* Cybertruck */ = {
 			isa = PBXGroup;
 			children = (
+				A6EA300224664F1D00280C9B /* Models */,
 				A6EA2FFD2466234C00280C9B /* ViewControllers */,
 				A6EA2FF82466219900280C9B /* Storyboards */,
 				A6EA2FF9246621A800280C9B /* Resources */,
@@ -98,6 +102,15 @@
 				A6EA2FFB2466234800280C9B /* GIPMainViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6EA300224664F1D00280C9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA2FFF24664F1900280C9B /* GIPCybertruck.h */,
+				A6EA300024664F1900280C9B /* GIPCybertruck.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +186,7 @@
 				A6EA2FE02465F77900280C9B /* AppDelegate.m in Sources */,
 				A6EA2FF12465F77C00280C9B /* main.m in Sources */,
 				A6EA2FFC2466234800280C9B /* GIPMainViewController.m in Sources */,
+				A6EA300124664F1900280C9B /* GIPCybertruck.m in Sources */,
 				A6EA2FE32465F77900280C9B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

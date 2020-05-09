@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class GIPCybertruck;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GIPMainViewController : UIViewController
+
+@property (nonatomic) GIPCybertruck *cybertruck;
+
+- (void)makeGradientBackground;
 
 @end
 
