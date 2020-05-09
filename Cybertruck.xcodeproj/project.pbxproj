@@ -15,6 +15,8 @@
 		A6EA2FF12465F77C00280C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FF02465F77C00280C9B /* main.m */; };
 		A6EA2FFC2466234800280C9B /* GIPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FFB2466234800280C9B /* GIPMainViewController.m */; };
 		A6EA300124664F1900280C9B /* GIPCybertruck.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA300024664F1900280C9B /* GIPCybertruck.m */; };
+		A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300424665AD600280C9B /* Lato-Black.ttf */; };
+		A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300524665AD600280C9B /* Lato-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A6EA2FFB2466234800280C9B /* GIPMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMainViewController.m; sourceTree = "<group>"; };
 		A6EA2FFF24664F1900280C9B /* GIPCybertruck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPCybertruck.h; sourceTree = "<group>"; };
 		A6EA300024664F1900280C9B /* GIPCybertruck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPCybertruck.m; sourceTree = "<group>"; };
+		A6EA300424665AD600280C9B /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		A6EA300524665AD600280C9B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		A6EA2FDD2465F77900280C9B /* Cybertruck */ = {
 			isa = PBXGroup;
 			children = (
+				A6EA300324665ABB00280C9B /* Fonts */,
 				A6EA300224664F1D00280C9B /* Models */,
 				A6EA2FFD2466234C00280C9B /* ViewControllers */,
 				A6EA2FF82466219900280C9B /* Storyboards */,
@@ -111,6 +116,15 @@
 				A6EA300024664F1900280C9B /* GIPCybertruck.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A6EA300324665ABB00280C9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA300424665AD600280C9B /* Lato-Black.ttf */,
+				A6EA300524665AD600280C9B /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */,
 				A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */,
+				A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */,
 				A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */,
 				A6EA2FE92465F77900280C9B /* Main.storyboard in Resources */,
 			);

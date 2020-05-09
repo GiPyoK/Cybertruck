@@ -8,11 +8,13 @@
 
 #import "GIPMainViewController.h"
 #import "GIPCybertruck.h"
+#import <UIKit/UIKit.h>
 
 @interface GIPMainViewController ()
 
-@property (strong, nonatomic) CAGradientLayer *gradient;
-
+@property (nonatomic) CAGradientLayer *gradientLayer;
+@property (nonatomic) UILabel *teslaLabel;
+@property (nonatomic) UIImageView *truckImageView;
 
 @end
 
@@ -32,18 +34,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view setBackgroundColor:[UIColor blackColor]];
+    [self makeGradientBackground];
+    [self setupLabels];
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//}
 
 - (void)makeGradientBackground {
-    self.gradient = [CAGradientLayer layer];
-    UIColor *topColor = [UIColor colorWithRed:66.0f/255.0 green:71.0f/255.0 blue:80.0f/255.0 alpha:0.8f];
-    UIColor *bottomColor = [UIColor colorWithRed:32.0f/255.0 green:35.0f/255.0 blue:38.0f/255.0 alpha:0.8f];
-    self.gradient.colors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)bottomColor.CGColor, nil];
-    self.gradient.frame = self.view.bounds;
-    [self.view.layer insertSublayer:self.gradient atIndex:0];
+    [self.view setBackgroundColor:[UIColor blackColor]];
+    self.gradientLayer = [CAGradientLayer layer];
+    UIColor *topColor = [UIColor colorWithRed:66/255.0 green:71/255.0 blue:80/255.0 alpha:0.8];
+    UIColor *bottomColor = [UIColor colorWithRed:32/255.0 green:35/255.0 blue:38/255.0 alpha:0.8];
+    self.gradientLayer.colors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)bottomColor.CGColor, nil];
+    self.gradientLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
+- (void)setupLabels {
+    UIFont *latoBlack50 = [UIFont fontWithName:@"Lato-Black" size:50.0f];
+    UIFont *latoRegular24 = [UIFont fontWithName:@"Lato-Regular" size:24.0f];
+    
+    float viewWidth = self.view.bounds.size.width;
+    float viewHeight = self.view.bounds.size.height;
+    
+    // Tesla Label
+    self.teslaLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.teslaLabel.text = @"Tesla";
+    self.teslaLabel.font = latoRegular24;
+    self.teslaLabel.backgroundColor = [UIColor clearColor];
+    self.teslaLabel.textColor = [UIColor colorWithRed:127/255.0 green:132/255.0 blue:137/255.0 alpha:1.0];
+    self.teslaLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.teslaLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.teslaLabel];
+    [self.teslaLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.teslaLabel.centerYAnchor constraintEqualToAnchor:self.view.topAnchor
+                                                  constant:viewHeight * 0.17].active = YES;
+    [self.teslaLabel.widthAnchor constraintEqualToConstant:83.0].active = YES;
+    [self.teslaLabel.heightAnchor constraintEqualToConstant:28.0].active = YES;
+    
+    // Cybertruck Image View
+    self.truckImageView = [[UIImageView alloc] initWithImage:self.cybertruck.image];
+    [self.truckImageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    self.truckImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.truckImageView];
+    [self.truckImageView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [self.truckImageView.heightAnchor constraintEqualToConstant:viewHeight * 0.279].active = YES;
+    [self.truckImageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.truckImageView.widthAnchor constraintEqualToAnchor:self.truckImageView.heightAnchor
+                                                  multiplier:1.6].active = YES;
+    
+    
+}
+
+- (void)removeSubviews {
+    [self.teslaLabel removeFromSuperview];
+    [self.truckImageView removeFromSuperview];
+}
 
 // Handle screen rotation
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -51,9 +101,11 @@
     // execute before rotation
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         // execute during rotation
+        [self removeSubviews];
+        self.gradientLayer.frame = self.view.bounds;
+        [self setupLabels];
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         // execute after rotation
-        self.gradient.frame = self.view.bounds;
     }];
 }
 
