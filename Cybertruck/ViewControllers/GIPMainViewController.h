@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GIPMainViewController.h
 //  Cybertruck
 //
 //  Created by Gi Pyo Kim on 5/8/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface GIPMainViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

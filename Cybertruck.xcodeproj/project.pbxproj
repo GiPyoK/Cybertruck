@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		A6EA2FE02465F77900280C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FDF2465F77900280C9B /* AppDelegate.m */; };
 		A6EA2FE32465F77900280C9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FE22465F77900280C9B /* SceneDelegate.m */; };
-		A6EA2FE62465F77900280C9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FE52465F77900280C9B /* ViewController.m */; };
 		A6EA2FE92465F77900280C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FE72465F77900280C9B /* Main.storyboard */; };
 		A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEA2465F77C00280C9B /* Assets.xcassets */; };
 		A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */; };
 		A6EA2FF12465F77C00280C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FF02465F77C00280C9B /* main.m */; };
+		A6EA2FFC2466234800280C9B /* GIPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FFB2466234800280C9B /* GIPMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +22,13 @@
 		A6EA2FDF2465F77900280C9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6EA2FE12465F77900280C9B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A6EA2FE22465F77900280C9B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A6EA2FE42465F77900280C9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6EA2FE52465F77900280C9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6EA2FE82465F77900280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6EA2FEA2465F77C00280C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6EA2FED2465F77C00280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6EA2FEF2465F77C00280C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EA2FF02465F77C00280C9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6EA2FFA2466234800280C9B /* GIPMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMainViewController.h; sourceTree = "<group>"; };
+		A6EA2FFB2466234800280C9B /* GIPMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +61,43 @@
 		A6EA2FDD2465F77900280C9B /* Cybertruck */ = {
 			isa = PBXGroup;
 			children = (
+				A6EA2FFD2466234C00280C9B /* ViewControllers */,
+				A6EA2FF82466219900280C9B /* Storyboards */,
+				A6EA2FF9246621A800280C9B /* Resources */,
+			);
+			path = Cybertruck;
+			sourceTree = "<group>";
+		};
+		A6EA2FF82466219900280C9B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA2FE72465F77900280C9B /* Main.storyboard */,
+				A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6EA2FF9246621A800280C9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A6EA2FDE2465F77900280C9B /* AppDelegate.h */,
 				A6EA2FDF2465F77900280C9B /* AppDelegate.m */,
 				A6EA2FE12465F77900280C9B /* SceneDelegate.h */,
 				A6EA2FE22465F77900280C9B /* SceneDelegate.m */,
-				A6EA2FE42465F77900280C9B /* ViewController.h */,
-				A6EA2FE52465F77900280C9B /* ViewController.m */,
-				A6EA2FE72465F77900280C9B /* Main.storyboard */,
 				A6EA2FEA2465F77C00280C9B /* Assets.xcassets */,
-				A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */,
 				A6EA2FEF2465F77C00280C9B /* Info.plist */,
 				A6EA2FF02465F77C00280C9B /* main.m */,
 			);
-			path = Cybertruck;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6EA2FFD2466234C00280C9B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA2FFA2466234800280C9B /* GIPMainViewController.h */,
+				A6EA2FFB2466234800280C9B /* GIPMainViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6EA2FE62465F77900280C9B /* ViewController.m in Sources */,
 				A6EA2FE02465F77900280C9B /* AppDelegate.m in Sources */,
 				A6EA2FF12465F77C00280C9B /* main.m in Sources */,
+				A6EA2FFC2466234800280C9B /* GIPMainViewController.m in Sources */,
 				A6EA2FE32465F77900280C9B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
-				INFOPLIST_FILE = Cybertruck/Info.plist;
+				INFOPLIST_FILE = Cybertruck/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
-				INFOPLIST_FILE = Cybertruck/Info.plist;
+				INFOPLIST_FILE = Cybertruck/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
