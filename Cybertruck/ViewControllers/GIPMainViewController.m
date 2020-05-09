@@ -10,22 +10,40 @@
 
 @interface GIPMainViewController ()
 
+@property (strong, nonatomic) CAGradientLayer *gradient;
+
+
 @end
 
 @implementation GIPMainViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.view setBackgroundColor:[UIColor blackColor]];
+    
         
     // Gradient Background
+    self.gradient = [CAGradientLayer layer];
     UIColor *topColor = [UIColor colorWithRed:66.0f/255.0 green:71.0f/255.0 blue:80.0f/255.0 alpha:0.8f];
     UIColor *bottomColor = [UIColor colorWithRed:32.0f/255.0 green:35.0f/255.0 blue:38.0f/255.0 alpha:0.8f];
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.colors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)bottomColor.CGColor, nil];
-    gradient.frame = self.view.bounds;
-    [self.view.layer insertSublayer:gradient atIndex:0];
-    
+    self.gradient.colors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)bottomColor.CGColor, nil];
+    self.gradient.frame = self.view.bounds;
+    [self.view.layer insertSublayer:self.gradient atIndex:0];
+}
+
+// Handle screen rotation
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    // execute before rotation
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        // execute during rotation
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        // execute after rotation
+        self.gradient.frame = self.view.bounds;
+    }];
 }
 
 /*
