@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float temperature;    // fahrenheit
 @property (nonatomic) BOOL isACOn;
 @property (nonatomic) int fanSpeed;
-@property (nonatomic) UIImage *image;
+@property (nonatomic, nonnull) UIImage *image;
 
 - (instancetype)initWithRange:(float)range
                       battery:(float)battery

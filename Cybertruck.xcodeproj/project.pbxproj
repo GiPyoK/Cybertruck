@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A6EA2FE02465F77900280C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FDF2465F77900280C9B /* AppDelegate.m */; };
 		A6EA2FE32465F77900280C9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FE22465F77900280C9B /* SceneDelegate.m */; };
-		A6EA2FE92465F77900280C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FE72465F77900280C9B /* Main.storyboard */; };
 		A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEA2465F77C00280C9B /* Assets.xcassets */; };
 		A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */; };
 		A6EA2FF12465F77C00280C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FF02465F77C00280C9B /* main.m */; };
@@ -17,6 +16,7 @@
 		A6EA300124664F1900280C9B /* GIPCybertruck.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA300024664F1900280C9B /* GIPCybertruck.m */; };
 		A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300424665AD600280C9B /* Lato-Black.ttf */; };
 		A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300524665AD600280C9B /* Lato-Regular.ttf */; };
+		A6EA300A2469E85F00280C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA30082469E85F00280C9B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,6 @@
 		A6EA2FDF2465F77900280C9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6EA2FE12465F77900280C9B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A6EA2FE22465F77900280C9B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A6EA2FE82465F77900280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6EA2FEA2465F77C00280C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6EA2FED2465F77C00280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6EA2FEF2465F77C00280C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		A6EA300024664F1900280C9B /* GIPCybertruck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPCybertruck.m; sourceTree = "<group>"; };
 		A6EA300424665AD600280C9B /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		A6EA300524665AD600280C9B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		A6EA30092469E85F00280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 		A6EA2FF82466219900280C9B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A6EA2FE72465F77900280C9B /* Main.storyboard */,
+				A6EA30082469E85F00280C9B /* Main.storyboard */,
 				A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -185,10 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */,
+				A6EA300A2469E85F00280C9B /* Main.storyboard in Resources */,
 				A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */,
 				A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */,
 				A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */,
-				A6EA2FE92465F77900280C9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,20 +210,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A6EA2FE72465F77900280C9B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6EA2FE82465F77900280C9B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A6EA2FEC2465F77C00280C9B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A6EA2FED2465F77C00280C9B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A6EA30082469E85F00280C9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6EA30092469E85F00280C9B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

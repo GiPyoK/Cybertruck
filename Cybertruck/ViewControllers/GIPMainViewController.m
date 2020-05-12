@@ -14,6 +14,7 @@
 
 @property (nonatomic) CAGradientLayer *gradientLayer;
 @property (nonatomic) UILabel *teslaLabel;
+@property (nonatomic) UILabel *cybertruckLabel;
 @property (nonatomic) UIImageView *truckImageView;
 
 @end
@@ -35,7 +36,7 @@
     [super viewDidLoad];
     
     [self makeGradientBackground];
-    [self setupLabels];
+    [self setupUI];
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
@@ -52,7 +53,7 @@
     [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
-- (void)setupLabels {
+- (void)setupUI {
     UIFont *latoBlack50 = [UIFont fontWithName:@"Lato-Black" size:50.0f];
     UIFont *latoRegular24 = [UIFont fontWithName:@"Lato-Regular" size:24.0f];
     
@@ -74,6 +75,34 @@
                                                   constant:viewHeight * 0.17].active = YES;
     [self.teslaLabel.widthAnchor constraintEqualToConstant:83.0].active = YES;
     [self.teslaLabel.heightAnchor constraintEqualToConstant:28.0].active = YES;
+    
+    // Cybertruck Label
+    self.cybertruckLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.cybertruckLabel.text = @"Cybertruck";
+    self.cybertruckLabel.font = latoBlack50;
+    self.cybertruckLabel.backgroundColor = [UIColor clearColor];
+    self.cybertruckLabel.textColor = [UIColor colorWithRed:253/255.0 green:253/255.0 blue:253/255.0 alpha:1.0];
+    self.cybertruckLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.cybertruckLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.cybertruckLabel];
+    NSLayoutConstraint *cybertruckTopConstraint = [NSLayoutConstraint constraintWithItem:self.cybertruckLabel
+                                                                               attribute:NSLayoutAttributeTop
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self.teslaLabel
+                                                                               attribute:NSLayoutAttributeBottom
+                                                                              multiplier:1.0f
+                                                                                constant:10.0f];
+
+    NSLayoutConstraint *cybertruckXConstraint = [NSLayoutConstraint constraintWithItem:self.cybertruckLabel
+                                                                               attribute:NSLayoutAttributeCenterX
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self.view
+                                                                               attribute:NSLayoutAttributeCenterX
+                                                                              multiplier:1.0f
+                                                                                constant:10.0f];
+    
+    [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:cybertruckTopConstraint, cybertruckXConstraint, nil]];
     
     // Cybertruck Image View
     self.truckImageView = [[UIImageView alloc] initWithImage:self.cybertruck.image];
@@ -103,7 +132,7 @@
         // execute during rotation
         [self removeSubviews];
         self.gradientLayer.frame = self.view.bounds;
-        [self setupLabels];
+        [self setupUI];
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         // execute after rotation
     }];

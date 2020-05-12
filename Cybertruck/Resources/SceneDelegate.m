@@ -7,6 +7,8 @@
 //
 
 #import "SceneDelegate.h"
+#import "GIPMainViewController.h"
+
 
 @interface SceneDelegate ()
 

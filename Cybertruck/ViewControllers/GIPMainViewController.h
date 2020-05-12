@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)makeGradientBackground;
 
-- (void)setupLabels;
+- (void)setupUI;
 
 - (void)removeSubviews;
 
