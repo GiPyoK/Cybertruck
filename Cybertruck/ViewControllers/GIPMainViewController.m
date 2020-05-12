@@ -15,6 +15,8 @@
 @property (nonatomic) CAGradientLayer *gradientLayer;
 @property (nonatomic) UILabel *teslaLabel;
 @property (nonatomic) UILabel *cybertruckLabel;
+@property (nonatomic) UILabel *rangeLabel;
+@property (nonatomic) UILabel *mileLabel;
 @property (nonatomic) UIImageView *truckImageView;
 
 @end
@@ -56,6 +58,10 @@
 - (void)setupUI {
     UIFont *latoBlack50 = [UIFont fontWithName:@"Lato-Black" size:50.0f];
     UIFont *latoRegular24 = [UIFont fontWithName:@"Lato-Regular" size:24.0f];
+    UIFont *latoThin188 = [UIFont fontWithName:@"Lato-Hairline" size:188.0];
+    UIFont *latoBold24 = [UIFont fontWithName:@"Lato-Bold" size:24.0f];
+    
+    UIColor *whiteLabelColor = [UIColor colorWithRed:253/255.0 green:253/255.0 blue:253/255.0 alpha:1.0];
     
     float viewWidth = self.view.bounds.size.width;
     float viewHeight = self.view.bounds.size.height;
@@ -81,7 +87,7 @@
     self.cybertruckLabel.text = @"Cybertruck";
     self.cybertruckLabel.font = latoBlack50;
     self.cybertruckLabel.backgroundColor = [UIColor clearColor];
-    self.cybertruckLabel.textColor = [UIColor colorWithRed:253/255.0 green:253/255.0 blue:253/255.0 alpha:1.0];
+    self.cybertruckLabel.textColor = whiteLabelColor;
     self.cybertruckLabel.textAlignment = NSTextAlignmentCenter;
     
     self.cybertruckLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -110,17 +116,53 @@
     
     self.truckImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.truckImageView];
-    [self.truckImageView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [self.truckImageView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
     [self.truckImageView.heightAnchor constraintEqualToConstant:viewHeight * 0.279].active = YES;
-    [self.truckImageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.truckImageView.centerXAnchor constraintEqualToAnchor:self.cybertruckLabel.trailingAnchor constant:40.0f].active = YES;
     [self.truckImageView.widthAnchor constraintEqualToAnchor:self.truckImageView.heightAnchor
-                                                  multiplier:1.6].active = YES;
+                                                  multiplier:3.0].active = YES;
+    
+    // Range Label
+    self.rangeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    NSString *rangeString = [NSString stringWithFormat:@"%0.f", self.cybertruck.range];
+    NSAttributedString *attributedRangeString = [[NSAttributedString alloc] initWithString:rangeString
+                                                                          attributes:@{
+                                                                              NSFontAttributeName : latoThin188,
+                                                                              NSForegroundColorAttributeName : whiteLabelColor,
+                                                                              NSKernAttributeName : @(-10.0f)
+                                                                          }];
+    self.rangeLabel.attributedText = attributedRangeString;
+    self.rangeLabel.backgroundColor = [UIColor clearColor];
+    self.rangeLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.rangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.rangeLabel];
+    [self.rangeLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.rangeLabel.bottomAnchor constraintEqualToAnchor:self.truckImageView.topAnchor constant:60.0f].active = YES;
     
     
+    // mile label
+    self.mileLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.mileLabel.text = @"mi";
+    self.mileLabel.font = latoBold24;
+    self.mileLabel.backgroundColor = [UIColor clearColor];
+    self.mileLabel.textColor = whiteLabelColor;
+    self.mileLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.mileLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.mileLabel];
+    [self.mileLabel.topAnchor constraintEqualToAnchor:self.rangeLabel.topAnchor constant:42.0f].active = YES;
+    [self.mileLabel.leadingAnchor constraintEqualToAnchor:self.rangeLabel.trailingAnchor constant:4.0f].active = YES;
+    
+    
+    [self.view bringSubviewToFront:self.truckImageView];
 }
 
 - (void)removeSubviews {
     [self.teslaLabel removeFromSuperview];
+    [self.cybertruckLabel removeFromSuperview];
+    [self.rangeLabel removeFromSuperview];
+    [self.mileLabel removeFromSuperview];
     [self.truckImageView removeFromSuperview];
 }
 

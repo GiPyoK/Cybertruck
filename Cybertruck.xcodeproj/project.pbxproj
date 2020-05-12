@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A63B54BD246A4182001DEF65 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA3013246A3F4C00280C9B /* Lato-Thin.ttf */; };
 		A6EA2FE02465F77900280C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FDF2465F77900280C9B /* AppDelegate.m */; };
 		A6EA2FE32465F77900280C9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EA2FE22465F77900280C9B /* SceneDelegate.m */; };
 		A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6EA2FEA2465F77C00280C9B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300424665AD600280C9B /* Lato-Black.ttf */; };
 		A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA300524665AD600280C9B /* Lato-Regular.ttf */; };
 		A6EA300A2469E85F00280C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EA30082469E85F00280C9B /* Main.storyboard */; };
+		A6EA3016246A3F6200280C9B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6EA3015246A3F6200280C9B /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A6EA300424665AD600280C9B /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		A6EA300524665AD600280C9B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		A6EA30092469E85F00280C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6EA3013246A3F4C00280C9B /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		A6EA3015246A3F6200280C9B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 			children = (
 				A6EA300424665AD600280C9B /* Lato-Black.ttf */,
 				A6EA300524665AD600280C9B /* Lato-Regular.ttf */,
+				A6EA3013246A3F4C00280C9B /* Lato-Thin.ttf */,
+				A6EA3015246A3F6200280C9B /* Lato-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -186,9 +192,11 @@
 			files = (
 				A6EA300624665AD700280C9B /* Lato-Black.ttf in Resources */,
 				A6EA300A2469E85F00280C9B /* Main.storyboard in Resources */,
+				A63B54BD246A4182001DEF65 /* Lato-Thin.ttf in Resources */,
 				A6EA2FEE2465F77C00280C9B /* LaunchScreen.storyboard in Resources */,
 				A6EA300724665AD700280C9B /* Lato-Regular.ttf in Resources */,
 				A6EA2FEB2465F77C00280C9B /* Assets.xcassets in Resources */,
+				A6EA3016246A3F6200280C9B /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
