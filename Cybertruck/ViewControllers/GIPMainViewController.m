@@ -19,6 +19,11 @@
 @property (nonatomic) UILabel *mileLabel;
 @property (nonatomic) UIImageView *truckImageView;
 
+@property (nonatomic) UILabel *tapToOpenLabel;
+@property (nonatomic) UIButton *unlockButton;
+
+- (void)unlock:(UIButton *)sender;
+
 @end
 
 @implementation GIPMainViewController
@@ -58,6 +63,7 @@
 - (void)setupUI {
     UIFont *latoBlack50 = [UIFont fontWithName:@"Lato-Black" size:50.0f];
     UIFont *latoRegular24 = [UIFont fontWithName:@"Lato-Regular" size:24.0f];
+    UIFont *latoRegular14 = [UIFont fontWithName:@"Lato-Regular" size:14.0f];
     UIFont *latoThin188 = [UIFont fontWithName:@"Lato-Hairline" size:188.0];
     UIFont *latoBold24 = [UIFont fontWithName:@"Lato-Bold" size:24.0f];
     
@@ -156,6 +162,38 @@
     
     
     [self.view bringSubviewToFront:self.truckImageView];
+    
+    
+    // tap to open label
+    self.tapToOpenLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.tapToOpenLabel.text = @"Tap to open the car";
+    self.tapToOpenLabel.font = latoRegular14;
+    self.tapToOpenLabel.backgroundColor = [UIColor clearColor];
+    self.tapToOpenLabel.textColor = whiteLabelColor;
+    self.tapToOpenLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.tapToOpenLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.tapToOpenLabel];
+    [self.tapToOpenLabel.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-20.0f].active = YES;
+    [self.tapToOpenLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    
+    // unlock button
+    self.unlockButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    UIImage *unlockButtonImage = [UIImage imageNamed:@"unlockButton"];
+    [self.unlockButton setBackgroundImage:unlockButtonImage forState:UIControlStateNormal];
+    
+    [self.unlockButton addTarget:self action:@selector(unlock:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.unlockButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.unlockButton];
+    [self.unlockButton.bottomAnchor constraintEqualToAnchor:self.tapToOpenLabel.topAnchor constant:0.0f].active = YES;
+    [self.unlockButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.unlockButton.widthAnchor constraintLessThanOrEqualToConstant:(viewWidth < viewHeight ? viewWidth : viewHeight) / 3.2f].active = YES;
+    [self.unlockButton.heightAnchor constraintEqualToAnchor:self.unlockButton.widthAnchor].active = YES;
+}
+
+- (void)unlock:(UIButton *)sender {
+    NSLog(@"unlocked");
 }
 
 - (void)removeSubviews {
