@@ -21,6 +21,7 @@
 
 @property (nonatomic) UILabel *tapToOpenLabel;
 @property (nonatomic) UIButton *unlockButton;
+@property (nonatomic) UILabel *acStatusLabel;
 
 - (void)unlock:(UIButton *)sender;
 
@@ -68,6 +69,7 @@
     UIFont *latoBold24 = [UIFont fontWithName:@"Lato-Bold" size:24.0f];
     
     UIColor *whiteLabelColor = [UIColor colorWithRed:253/255.0 green:253/255.0 blue:253/255.0 alpha:1.0];
+    UIColor *grayLabelColor = [UIColor colorWithRed:127/255.0 green:132/255.0 blue:137/255.0 alpha:1.0];
     
     float viewWidth = self.view.bounds.size.width;
     float viewHeight = self.view.bounds.size.height;
@@ -77,7 +79,7 @@
     self.teslaLabel.text = @"Tesla";
     self.teslaLabel.font = latoRegular24;
     self.teslaLabel.backgroundColor = [UIColor clearColor];
-    self.teslaLabel.textColor = [UIColor colorWithRed:127/255.0 green:132/255.0 blue:137/255.0 alpha:1.0];
+    self.teslaLabel.textColor = grayLabelColor;
     self.teslaLabel.textAlignment = NSTextAlignmentCenter;
     
     self.teslaLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -186,10 +188,23 @@
     
     self.unlockButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.unlockButton];
-    [self.unlockButton.bottomAnchor constraintEqualToAnchor:self.tapToOpenLabel.topAnchor constant:0.0f].active = YES;
+    [self.unlockButton.bottomAnchor constraintEqualToAnchor:self.tapToOpenLabel.topAnchor constant:20.0f].active = YES;
     [self.unlockButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.unlockButton.widthAnchor constraintLessThanOrEqualToConstant:(viewWidth < viewHeight ? viewWidth : viewHeight) / 3.2f].active = YES;
     [self.unlockButton.heightAnchor constraintEqualToAnchor:self.unlockButton.widthAnchor].active = YES;
+    
+    // AC Status Label
+    self.acStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.acStatusLabel.text = [NSString stringWithFormat:@"A/C is turned %@", self.cybertruck.isACOn ? @"on" : @"off"];
+    self.acStatusLabel.font = latoRegular24;
+    self.acStatusLabel.backgroundColor = [UIColor clearColor];
+    self.acStatusLabel.textColor = grayLabelColor;
+    self.acStatusLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.acStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.acStatusLabel];
+    [self.acStatusLabel.bottomAnchor constraintEqualToAnchor:self.unlockButton.topAnchor constant:10.0f].active = YES;
+    [self.acStatusLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
 }
 
 - (void)unlock:(UIButton *)sender {
